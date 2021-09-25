@@ -1,0 +1,65 @@
+.top{
+    background: green;
+    width: 100%;
+    height: 30px;
+    position: relative;
+}
+.center{
+    background: yellow;
+    width: 100%;
+    height: 800px;
+    position: relative;
+}
+.bot{
+    background: red;
+    width: 100%;
+    height: 30px;
+    position: relative;
+}
+.top-left{
+    float: left;
+    width: 33%;
+    height: 30px;
+    border: 1px solid;
+    position: absolute;
+}
+.top-right{
+    float: left;
+    width: 33%;
+    left: 66%;
+    height: 30px;
+    border: 1px solid;
+    position: absolute;
+}
+.top-center{
+    float: left;
+    width: 33%;
+    left: 33%;
+    height: 30px;
+    border: 1px solid;
+    position: absolute;
+}
+.center-left{
+    width: 33%;
+    height: 800px;
+    border: 1px solid;
+    float: left;
+    position: absolute;
+    margin-left: 0%;
+}
+.center-right{
+    width: 33%;
+    height: 800px;
+    border: 1px solid;
+    float: left;
+    position: absolute;
+    margin-left: 66%;
+}
+.center-center{
+    width: 33%;
+    height: 800px;
+    border: 1px solid;
+    float: left;
+    position: absolute;
+    margin-left: 33%;
+}
