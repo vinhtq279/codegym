@@ -1,65 +1,114 @@
-.top{
+.menu{
+    width: 100%;
+    height: 50px;
+}
+.logo{
+    width: 30%;
+    height: 50px;
+    float: left;
+}
+.nav{
+    width: 40%;
+    height: 50px;
+    float: left;
+}
+.img{
+    width: 40px;
+    float: left;
+    display: block;
+}
+.search-bar{
+    border: solid 1px;
+    margin-left: 8px;
+    border-radius: 20px;
+    height: 30px;
+    margin-top: 5px;
+    width: 250px;
+}
+.nav-item{
+    float:left;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+}
+.nav-item > button{
+    height:50px;
+    width:100px;
+    border: none;
+}
+.nav-item > button i{
+    margin: 0;
+    padding: 0;
+    line-height: 50px;
+}
+.nav-item > button:hover{
     background: green;
-    width: 100%;
-    height: 30px;
-    position: relative;
 }
-.center{
-    background: yellow;
-    width: 100%;
-    height: 800px;
-    position: relative;
+.user-nav{
+    width: 30%;
+    float:right;
 }
-.bot{
+.user-nav-item{
+    float: right;
+    line-height: 30px;
+    margin-top: 5px;
+    width: 40px;
+}
+.content{
+    background: black;
+    height: 1000px;
+}
+.my-own{
+    height: 1000px;
+    width: 25%;
+    background: greenyellow;
+    float:left;
+}
+.my-own:hover{
+    overflow: auto;
+}
+.my-content{
+    border-bottom: 1px solid;
+    height: 400px;
+}
+.my-shortcut{
+    border-bottom: 1px solid;
+    height: 600px;
+}
+.my-wall{
+    width: 49%;
+    height: 1500px;
     background: red;
-    width: 100%;
-    height: 30px;
-    position: relative;
-}
-.top-left{
     float: left;
-    width: 33%;
-    height: 30px;
     border: 1px solid;
-    position: absolute;
 }
-.top-right{
+.my-wall > div{
+    border: 1px solid;
+    padding: 2% 15% 2% 15%;
+}
+.ads{
+    height: 900px;
+    width: 25%;
+    background: blue;
     float: left;
-    width: 33%;
-    left: 66%;
-    height: 30px;
-    border: 1px solid;
-    position: absolute;
 }
-.top-center{
-    float: left;
-    width: 33%;
-    left: 33%;
-    height: 30px;
-    border: 1px solid;
-    position: absolute;
+.ads:hover{
+    overflow: auto;
 }
-.center-left{
-    width: 33%;
+.groups{
+    height: 200px;
+    border-bottom: 1px solid;
+}
+.sponsored{
+    height: 200px;
+    border-bottom: 1px solid;
+}
+.contacts{
     height: 800px;
-    border: 1px solid;
-    float: left;
-    position: absolute;
-    margin-left: 0%;
+    border-bottom: 1px solid;
 }
-.center-right{
-    width: 33%;
-    height: 800px;
-    border: 1px solid;
-    float: left;
-    position: absolute;
-    margin-left: 66%;
+.group-conversations{
+    height: 500px;
+    border-bottom: 1px solid;
 }
-.center-center{
-    width: 33%;
-    height: 800px;
-    border: 1px solid;
-    float: left;
-    position: absolute;
-    margin-left: 33%;
-}
+
