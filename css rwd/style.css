@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.menu{
+    background: brown;
+}
+#logo{
+    float: left;
+    margin: 5px;
+}
+.menu-item{
+    float: left;
+    margin: 5px;
+}
+#login{
+    float: right;
+    margin: 5px;
+}
+.nav{
+    clear: both;
+    width: 25%;
+    float: left;
+    background: green;
+}
+.nav > a{
+    display: block;
+    width: 100%;
+}
+.content{
+    float: left;
+    width: 50%;
+    background: red;
+    padding: 10px;
+}
+.right{
+    float: left;
+    background: yellow;
+}
+.footer{
+    clear: both;
+    text-align: center;
+}
+
+@media only screen and (max-width: 620px) {
+    .nav, .content, .right{
+        width: 100%;
+    }
+}
