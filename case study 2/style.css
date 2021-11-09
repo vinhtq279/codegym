@@ -3,30 +3,18 @@
     padding: 0;
 }
 .main{
-    background-color: blue;
+    
     padding-left: 5%;
 }
 .main-top{
     text-align: center;
-    background-color: hotpink;
-}
-.main-bot{
-    background-color: red;
-}
-.main-bot-par{
-    background-color: yellow;
-}
-.architec{
-    background-color: indigo
-}
-.architec-top{
-    background-color: green;
+    
 }
 .architect-top-par-sub{
     border-bottom: 1px solid;
 }
 .services-right-item-sub p{
-    color: green;
+    
     display: none;
 }
 .services-right-item-sub span{
@@ -34,16 +22,14 @@
 }
 .services-right-item-sub:hover p{
     display: block;
-}
-.services-right-item-sub:hover{
-    background-color: red;
+    color: red;
 }
 .project-thumb-top{
     flex-direction: row;
 }
 .project-thumb-item{
     flex-grow: 1;
-    background-color: green;
+    
     margin-top: 3%;
     cursor: pointer;
     
@@ -56,7 +42,7 @@
 .project-thumb-item .item-sub{
     z-index: -1;
     position: absolute;
-    background-color: indianred;
+    
 }
 .project-thumb-item img{
     max-width: 100%;
@@ -64,13 +50,9 @@
     border-radius: 5%;
     z-index: 1;
 }
-.project-thumb-item:hover img{
-    
-}
 .project-bot{
     text-align: center;
 }
-
 .news-item img{
     border-radius: 5%;
     max-width: 100%;
@@ -80,9 +62,24 @@
     flex-grow: 1;
 }
 .news-tit a{
-    color: red;
+    
     text-decoration: none;
 }
-.news-tit p:first-child{
-    color: blue;
+.main-top .video-btn button{
+    outline: none;
+  
+  
+  border: none;
+}
+
+.d-block{
+    max-width: 100%;
+}
+.item-sub{
+    background-image: url("img_8.jpg");
+}
+.footer a{
+    text-decoration: none;
+    color: coral;
+    animation-tim
 }
