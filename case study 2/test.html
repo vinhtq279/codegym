@@ -4,47 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>Document</title>  
 </head>
 <body>
-    <!--<form>-->
-        <input type="text" placeholder="number 1" id="num1">
-        <input type="text" placeholder="number 2" id="num2">
-        <h4 id="result">Result</h4>
-        <button onclick="add()">Addition</button>
-        <button onclick="sub()">Subtraction</button>
-        <button onclick="mul()">Multiplication</button>
-        <button onclick="div()">Division</button>
-    <!--</form>-->
+    <div class="map">
+        <img src="https://s3.ap-southeast-1.amazonaws.com/learn.codegym.vn/media/public/2020/12/02171059/tank.png" id="tank" onkeypress="move()" style="color: green; left: 0; top: 0; width: 19; height: 19;">
+        <!--<button onclick="alert(document.getElementById('tank').style.color)">Check</button>-->
+    </div>
     <script>
-        function add(){
-            let num1 = parseInt(document.getElementById("num1").value);
-            let num2 = parseInt(document.getElementById("num2").value);
-            let result = num1 + num2;
-            document.getElementById("result").innerHTML = result;
-        }
-
-        function sub(){
-            let num1 = parseInt(document.getElementById("num1").value);
-            let num2 = parseInt(document.getElementById("num2").value);
-            let result = num1 - num2;
-            document.getElementById("result").innerHTML = result;
-        }
-
-        function mul(){
-            let num1 = parseInt(document.getElementById("num1").value);
-            let num2 = parseInt(document.getElementById("num2").value);
-            let result = num1 * num2;
-            document.getElementById("result").innerHTML = result;
-        }
-
-        function div(){
-            let num1 = parseInt(document.getElementById("num1").value);
-            let num2 = parseInt(document.getElementById("num2").value);
-            let result = num1 / num2;
-            document.getElementById("result").innerHTML = result;
-        }
-
+        document.addEventListener('keydown', function(e){
+            switch (e.keyCode){
+                case 37:
+                    parseInt(document.getElementById("tank").style.left) -= 19;
+                    x = parseInt(document.getElementById("tank").style.left);
+                    document.getElementById("tank").style.left = x + "px";
+                    alert('x');
+                    break;
+                case 38:
+                    parseInt(document.getElementById("tank").style.top) -= 19;
+                    x = parseInt(document.getElementById("tank").style.top);
+                    document.getElementById("tank").style.top = x + "px";
+                    alert('top');
+                    break;
+                case 39:
+                    parseInt(document.getElementById("tank").style.left) += 19;
+                    x = parseInt(document.getElementById("tank").style.left);
+                    document.getElementById("tank").style.left = x + "px";
+                    break;
+                case 40:
+                    parseInt(document.getElementById("tank").style.top) += 19;
+                    x = parseInt(document.getElementById("tank").style.top);
+                    document.getElementById("tank").style.top = x + "px";
+                    break;
+            }
+        })
     </script>
 </body>
