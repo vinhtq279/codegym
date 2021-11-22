@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+    margin: 1%;
+    opacity: 1;
+}
+#banner{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,255,0.5)), 
+    url("https://st2.depositphotos.com/3649089/7339/v/600/depositphotos_73398823-stock-illustration-bookshelf-books-on-a-shelves.jpg");
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+}
+.banner-text{
+    text-align: center;
+    padding-top: 5%;
+    color:red;
+}
+.banner-text h1{
+    font-size: 80px;
+}
+
+.banner-btn{
+    margin: 10% auto;
+}
+.banner-btn a{
+    border: 1px solid white;
+    color: white;
+    margin: 10%;
+    padding: 15px 20px;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    z-index: 1;
+    transition: color 1s;
+}
+.banner-btn a span{
+    width:0%;
+    height: 100%;
+    transition: 1s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.banner-btn a:hover{
+    color: yellow;
+}
+.banner-btn a:hover span{
+    width: 100%;
+}
+#side-nav{
+    margin-left: 50%;
+    position: fixed;
+    width: 20%;
+    height: 100vh;
+    background: rgb(208, 241, 130);
+    top: 0;
+    z-index: 1;
+}
+#side-nav ul li {
+    list-style: none;
+    padding: 20px 10px;
+
+}
+#menuBtn{
+    width: 70px;
+    height: 70px;
+    top: 30px;
+    right: 80px;
+    position: fixed;
+    z-index: 3;
+    cursor: pointer;
+}
+
+/**feature**/
+
+#feature{
+    padding-top: 5%;
+}
+#title-text{
+    text-align: center;
+}
+#feature-box{
+    display: flex;
+}
+.feature{
+    flex-basis: 50%;
+}
+.feature-desc{
+    display: flex;
+}
+.feature-icon{
+    margin: 0 3%;
+    justify-content: center;
+}
+.feature-img{
+    flex-basis: 50%;
+    margin: auto;
+    overflow: visible;
+}
+.feature-img img{
+    width: 70%;
+    margin-left: 15%;
+    border-radius: 30px;
+}
+/**end feature**/
+#services{
+    padding: 5%;
+}
+#title-services{
+    text-align: center;
+    margin-bottom: 5%;
+}
+.services-box{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-around;
+}
+.single-service{
+    flex-basis: 45%;
+    position: relative;
+    border-radius: 7px;
+    margin-bottom: 5%;
+}
+.single-service img{
+    width: 100%;
+    border-radius: 7px;
+}
+.single-service hr{
+    width: 50%;
+    margin: auto;
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,255,0.5));
+    opacity: 0;
+    transition: 1s;
+}
+.service-desc{
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,255,0.5));
+    transition: 5s;
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    opacity: 0;
+}
+.single-service:hover .overlay{
+    opacity: 1;
+}
+.single-service:hover .service-desc{
+    bottom: 40%;
+    opacity: 1;
+}
+
+/**client said**/
+
+#users{
+    padding: 5%;  
+}
+#user-title{
+    text-align: center;
+    margin-bottom: 5%;
+}
+.users{
+    display: flex;
+    justify-content: space-around;  
+
+}
+.user-column{
+    flex-basis: 28%;
+    box-shadow: 5px 10px 5px gray;
+}
+.user{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+}
+.user img{
+    width: 10%;
+    margin-right: 5%;
+}
+.user p{
+    font-size: 14px;
+    
+}
+.user-column:hover{
+    transform: translateY(5%);
+}
+
+/**footer**/
+#footer {
+    padding: 5%;
+    position: relative;
+}
+#footer img{
+    left: 50%;
+    position: absolute;
+    opacity: 0.5;
+    transform: translate(-50%, -50%);
+    max-height: 150px;
+}
+#footer-title{
+    text-align: center;
+}
+.footer-info{
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer-info h1{
+    margin: 5% 0;
+}
+.footer-left, .footer-right{
+    flex-basis: 35%;
+    padding: 5%;
+}
+.footer-right{
+    text-align: right;
+}
+.footer-social{
+    padding: 3%;
+    text-align: center;
+}
+.footer-social i{
+    width: 10px;
+}
+.footer-social i:hover{
+    color: orange;
+}
+
