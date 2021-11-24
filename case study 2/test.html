@@ -7,36 +7,62 @@
     <title>Document</title>  
 </head>
 <body>
-    <div class="map">
-        <img src="https://s3.ap-southeast-1.amazonaws.com/learn.codegym.vn/media/public/2020/12/02171059/tank.png" id="tank" onkeypress="move()" style="color: green; left: 0; top: 0; width: 19; height: 19;">
+    <div class="map" style="position: relative; background-color: black; width: 1000px; height: 800px;">
+        <img src="tank-up.png" id="tank" style="color: green; left: 0; top: 0; width: 35px; height: 35px; position: absolute;">
+        <img src="star.png" id ="star" style="width: 40px; height: 40px; position: absolute; left: 500px; top: 300px;">
         <!--<button onclick="alert(document.getElementById('tank').style.color)">Check</button>-->
     </div>
     <script>
+        var tank = document.getElementById("tank");
+        var star = document.getElementById("star");
+        var x_tank = parseInt(tank.style.left);
+        var y_tank = parseInt(tank.style.top);
+        var x_star = parseInt(star.style.left);
+        var y_star = parseInt(star.style.top);
+        var size = 50;
         document.addEventListener('keydown', function(e){
-            switch (e.keyCode){
-                case 37:
-                    parseInt(document.getElementById("tank").style.left) -= 19;
-                    x = parseInt(document.getElementById("tank").style.left);
-                    document.getElementById("tank").style.left = x + "px";
-                    alert('x');
+            let speed = 10;
+            let x = parseInt(document.getElementById("tank").style.left);
+            let y = parseInt(document.getElementById("tank").style.top);
+            switch (e.key){
+                case "a":
+                    x -= speed;
+                    tank.src = "tank-left.png";
                     break;
-                case 38:
-                    parseInt(document.getElementById("tank").style.top) -= 19;
-                    x = parseInt(document.getElementById("tank").style.top);
-                    document.getElementById("tank").style.top = x + "px";
-                    alert('top');
+                case "w":
+                    y -= speed;
+                    tank.src = "tank-up.png";
                     break;
-                case 39:
-                    parseInt(document.getElementById("tank").style.left) += 19;
-                    x = parseInt(document.getElementById("tank").style.left);
-                    document.getElementById("tank").style.left = x + "px";
+                case "d":
+                    x += speed;
+                    tank.src = "tank-right.png";
                     break;
-                case 40:
-                    parseInt(document.getElementById("tank").style.top) += 19;
-                    x = parseInt(document.getElementById("tank").style.top);
-                    document.getElementById("tank").style.top = x + "px";
+                case "s":
+                    y += speed;
+                    tank.src = "tank-down.png";
                     break;
             }
+            
+            document.getElementById("tank").style.left = x + "px";
+            document.getElementById("tank").style.top = y + "px";
         })
+        function show_star(){
+            let x = Math.floor(Math.random() * 1000);
+            let y = Math.floor(Math.random() * 800);
+            if (!check_bump()){
+                star.style.left = x + "px";
+                star.style.top = y + "px";
+            }
+            alert(check_bump());
+        }
+        function check_bump(){
+            if ((x_tank + size < x_star) && (y_tank + size < y_star)){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        show_star();
     </script>
 </body>
