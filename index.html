@@ -2,9 +2,88 @@
   <head>
   </head>
   <body>
-    <h1>CodeGym</h1>
-    <img src="https://cdn.ek.aero/jp/english/images/rs959x350-HCM_tcm323-4973889.jpg" />
-    <a href="#">It's me</a>
-    <p>Paragrame</p>
+    <table>
+      <tr>
+        <td id="result" colspan="4"></td>
+      </tr>
+      <tr>
+        <td><button id="1" onclick="input(this.id)">1</button></td>
+        <td><button id="2" onclick="input(this.id)">2</button></td>
+        <td><button id="1" onclick="input(this.id)">3</button></td>
+        <td><button id="+" onclick="input(this.id)">+</button></td>
+      </tr>
+      <tr>
+        <td><button id="4" onclick="input(this.id)">4</button></td>
+        <td><button id="5" onclick="input(this.id)">5</button></td>
+        <td><button id="6" onclick="input(this.id)">6</button></td>
+        <td><button id="-" onclick="input(this.id)">-</button></td>
+      </tr>
+      <tr>
+        <td><button id="7" onclick="input(this.id)">7</button></td>
+        <td><button id="8" onclick="input(this.id)">8</button></td>
+        <td><button id="9" onclick="input(this.id)">9</button></td>
+        <td><button id="*" onclick="input(this.id)">*</button></td>
+      </tr>
+      <tr>
+        <td><button id="0" onclick="input(this.id)">0</button></td>
+        <td><button id="." onclick="input(this.id)">.</button></td>
+        <td><button id="=" onclick="input(this.id)">=</button></td>
+        <td><button id="/" onclick="input(this.id)">/</button></td>
+      </tr>
+    </table>
+    <script>
+      let num1 = num2 = result = 0;
+      let num1exists = 0;
+      let operation = "+";
+      function input(num){
+        switch(num){
+          case "+":
+            operation = "+";
+            break;
+          case "-":
+            operation = "-";
+            break;
+          case "*":
+            operation = "*";
+            break;
+          case "/":
+            operation = "/";
+            break;
+          case "=":
+            switch (operation){
+              case "+":
+                result = num1 + num2;
+                alert("num1: " + num1 + "; num2: " + num2 + ";result: " + result);
+                break;
+              case "-":
+                result = num1 + num2;
+                break;
+              case "*":
+                result = num1 + num2;
+                break;
+              case "/":
+                result = num1 + num2;
+                break;
+            }
+            document.getElementById("result").innerHTML = result;
+            break;          
+          case ".":
+            result = num1 + num2;
+            break;
+          default:
+            if (num1exists == 0){
+              num1 = parseInt(num);
+              num1exist = 1;
+            }
+            else{
+              num2 = parseInt(num);
+            }
+            alert("num: " + num);
+            alert("num1: " + num1 + "; num2: " + num2 + ";result: " + result);
+            break;
+        }  
+      }
+      
+    </script>
   </body>
 </html>
