@@ -66,8 +66,7 @@
             let check = 0;
             for(let i =0; i<n; i++){
                 for(let j=0; j<m; j++){
-                    if(((a[i][j] == a[i][j+1] && a[i][j] == a[i][j+2]) || (a[i][j] == a[i+1][j] && a[i][j] == a[i+2][j]) || (a[i][j] == a[i+1][j+1] || a[i][j] == a[i+2][j+2])) && a[i][j] != ' . '){
-                    //== a[i][j+2] || a[i][j] == a[i+1][j] == a[i+2][j] || a[i][j] == a[i+1][j+1] == a[i+2][j+2]){
+                    if(((((a[i][j] == a[i][j+1]) && (a[i][j] == a[i][j+2])) || ((a[i][j] == a[i+1][j]) && (a[i][j] == a[i+2][j])) || ((a[i][j] == a[i+1][j+1]) && a[i][j] == a[i+2][j+2]))) && (a[i][j] != ' . ')){
                         alert(a[i][j] + "WIN!!!");
                         check = 1;
                         break;
