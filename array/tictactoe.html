@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        pre{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div id="table"></div>
+    <script>
+        var table = "";
+        let m = n = 12;
+        var arr1 = Array(n);
+        var xo = "x";
+        init_table(m, n);
+
+        function init_table(m, n){
+            for (let i = 0; i < n; i++){
+                arr1[i] = [];
+                for (let j = 0; j < m; j++){
+                    arr1[i][j] = " . ";        
+                }
+            }
+            draw_table(m, n);
+        }
+    
+        function draw_table(m, n){
+            table = "";
+            for (let i = 0; i < n; i++){
+                for (let j = 0; j < m; j++){
+                    if(j == m -1){
+                        table = table + "<pre>" + arr1[i][j] + "</pre>" + "<br>";
+                    }else{
+                        table = table + "<pre>" + arr1[i][j] + "</pre>";
+                    }
+                }
+            }
+            table += "<button onclick='redraw()'>Click</button>";
+            document.getElementById("table").innerHTML = table;
+        }
+
+        function redraw(){
+            let r = prompt("Which row of cell you want change?");
+            let c = prompt("Which column of cell you wnat change?");
+            switch(xo){
+                case "x":
+                    arr1[r-1][c-1] = " x ";
+                    xo = "o";
+                    break;
+                case "o":
+                    arr1[r-1][c-1] = " o ";
+                    xo = "x";
+                    break;
+            }
+            draw_table(m, n);
+            check_win(arr1);
+        }
+
+        function check_win(a){
+            let check = 0;
+            for(let i =0; i<n; i++){
+                for(let j=0; j<m; j++){
+                    if(((a[i][j] == a[i][j+1] && a[i][j] == a[i][j+2]) || (a[i][j] == a[i+1][j] && a[i][j] == a[i+2][j]) || (a[i][j] == a[i+1][j+1] || a[i][j] == a[i+2][j+2])) && a[i][j] != ' . '){
+                    //== a[i][j+2] || a[i][j] == a[i+1][j] == a[i+2][j] || a[i][j] == a[i+1][j+1] == a[i+2][j+2]){
+                        alert(a[i][j] + "WIN!!!");
+                        check = 1;
+                        break;
+                    }
+                }
+                if (check == 1){break;}
+            }
+        }
+    </script>
+</body>
+</html>
