@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1 = ['a', 9, 'b', 10];
+        let index = arr1.filter(myFunction);
+        function myFunction(value){
+            return value > 8;
+        }
+        let str1 = "username=vinhtq";
+        //console.log(arr1.indexOf('b'));
+        class user{
+            name;
+            age;
+            constructor(_name, _age){
+                this.name = _name;
+                this.age = _age;
+            }
+        }
+        let users = JSON.parse(localStorage.getItem('test') || "[]");
+        function searchUserByName(name){
+            for (let i = 0; i < users.length; i++){
+                if(users[i].name == name){
+                    return i;
+                }
+            }
+            return -1;
+        }
+        console.log(searchUserByName('david'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = prompt("Pls input how many interger number?");
+        let arr = Array();
+        let count = result = sum = 0;
+        for (let i = 0; i < n; i++){
+            let j = Math.floor((0.5 - Math.random()) * 10);
+            console.log(j);
+            if (j >= 0){
+                sum += j;
+                count += 1;
+            }
+        }
+        result = sum / count;
+        document.write(result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{
+            border: 1px solid;
+            width: 30%;
+            height: 90px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Type anything slowly</h3>
+    <textarea id="ta" onkeydown="show_text()" onkeyup="clear_text()"></textarea>
+    <script>
+        var data = "";
+        var str1 = "Trịnh Quang Vinh";
+        let i = 0;
+        function show_text(){
+            if(event.keyCode == 32){
+                data += event.key;
+            }else{
+                data += str1[i++];
+            }
+            document.getElementById("ta").value = data;
+            console.log(data);
+        }
+        function clear_text(){
+            document.getElementById("ta").value = data;
+        }
+    </script>
+</body>
+</html>

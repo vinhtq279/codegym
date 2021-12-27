@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="table"></div>
+    <script>
+        var table = "";
+        let m = prompt("How many columns?");
+        let n = prompt("How many rows?");
+        //let m = n = 6;
+        var arr1 = Array(n);
+        init_table(m, n);
+
+        function init_table(m, n){
+            for (let i = 0; i < n; i++){
+                arr1[i] = [];
+                for (let j = 0; j < m; j++){
+                    arr1[i][j] = "o";
+                    if(j == m -1){
+                        table = table + arr1[i][j] + "<br>";
+                    }else{
+                        table = table + arr1[i][j];
+                    }
+                }
+            }
+            table += "<button onclick='redraw()'>Click</button>";
+            document.getElementById("table").innerHTML = table;
+        }
+    
+        function draw_table(m, n){
+            table = "";
+            for (let i = 0; i < n; i++){
+                for (let j = 0; j < m; j++){
+                    if(j == m -1){
+                        table = table + arr1[i][j] + "<br>";
+                    }else{
+                        table = table + arr1[i][j];
+                    }
+                }
+            }
+            table += "<button onclick='redraw()'>Click</button>";
+            document.getElementById("table").innerHTML = table;
+        }
+
+        function redraw(){
+            let r = prompt("Which row of cell you want change?");
+            let c = prompt("Which column of cell you wnat change?");
+            arr1[r][c] = "x";
+            draw_table(m, n);
+        }
+    </script>
+    <script>
+        
+        
+
+        
+        
+        
+    </script>    
+</body>
+</html>

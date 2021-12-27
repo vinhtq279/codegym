@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" async></script>
+    <!--Scripts with the async attribute are executed asynchronously. 
+        This means the script is executed as soon as it's downloaded, without blocking the browser in the meantime. 
+        This implies that it's possible to script 2 is downloaded and executed before script 1.
+    The current state-of-the-art is to put scripts in the <head> tag and use the async or defer attributes. 
+        This allows your scripts to be downloaded ASAP without blocking your browser.
+        The good thing is that your website should still load correctly on the 2% of browsers that do not support 
+        these attributes while speeding up the other 98%.-->
+        
+</head>
+<body onload="load_question()">
+    <div id="questions">
+    </div>
+    <button id="submit" onclick="check_result(results)">Submit</button>
+    <script>
+        debug();
+    </script>
+</body>
+</html>
