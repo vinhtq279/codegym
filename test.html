@@ -13,7 +13,26 @@
         function myFunction(value){
             return value > 8;
         }
-        console.log(index);
+        let str1 = "username=vinhtq";
+        //console.log(arr1.indexOf('b'));
+        class user{
+            name;
+            age;
+            constructor(_name, _age){
+                this.name = _name;
+                this.age = _age;
+            }
+        }
+        let users = JSON.parse(localStorage.getItem('test') || "[]");
+        function searchUserByName(name){
+            for (let i = 0; i < users.length; i++){
+                if(users[i].name == name){
+                    return i;
+                }
+            }
+            return -1;
+        }
+        console.log(searchUserByName('david'));
     </script>
 </body>
 </html>
