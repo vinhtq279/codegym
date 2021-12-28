@@ -54,7 +54,7 @@ function load_question(){
     let question1 = new Question(1, "What's your name?", answers1);
     let answers2 = ["A. 19", "B. 35", "C. 30"];
     let question2 = new Question(2, "How old are you?", answers2);
-    let results = [['1'], ['2']];
+    results = [['1'], ['2']];
     questions.push(question1);
     questions.push(question2);
 
@@ -101,9 +101,8 @@ function getCookie(cname){
 }
 
 function index(){
-    let get = JSON.parse(localStorage.getItem('user'));
-    users = get;
-    if (getCookie("username" != "")){
+    users = JSON.parse(localStorage.getItem('users') || "[]");
+    if (getCookie("username") != ""){
         users.forEach(user => {
             // Have logined
             if (getCookie("username") == user.username && getCookie("password") == user.password){
@@ -120,6 +119,7 @@ function index(){
         console.log("go to login");
         //window.location.replace("http://127.0.0.1:5500/PF2110R1/Case%20Study/login.html");
     }
+    console.log(getCookie("username"));
 }
 
 function login(){
@@ -131,28 +131,21 @@ function login(){
     setCookie("password", password, 1);
     console.log(users);
     if (users.length > 0){
-        if (users.indexOf(account) >= 0){
-            console.log("go to quiz");
-            console.log(users.indexOf(account));
-            //window.location.replace("http://127.0.0.1:5500/PF2110R1/Case%20Study/quiz.html");
-        }else{
-            users.push(account);
-            localStorage.setItem('users', JSON.stringify(users));
-            console.log("go to login because this is first time you login");
+        for (let i = 0; i < users.length; i++){
+            if (users[i].username == account.username && users[i].password == account.password){
+                console.log("go to quiz");
+                //window.location.replace("http://127.0.0.1:5500/PF2110R1/Case%20Study/quiz.html");
+            }
         }
     }else{
-        users = [];
-        users.push(account);
-        localStorage.setItem('users', JSON.stringify(users));
-        alert("pls login");
+        console.log("go to register");
     }
-    
-    console.log(users);
 }
     
     
 
 let users = [];
+let results = [];
 
 function create_users(){    
     let user1 = new User("vinhtq", "123@123a");
@@ -163,5 +156,15 @@ function create_users(){
 
 function debug(){
     console.log(users);
+}
+
+function register(){
+    users = JSON.parse(localStorage.getItem('users') || "[]");
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    let account = new User(username, password);
+    users.push(account);
+    localStorage.setItem('users', JSON.stringify(users));
+    console.log("go to login");
 }
 
